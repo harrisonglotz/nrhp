@@ -3,6 +3,13 @@ These scripts create a database from current National Register of Historic Place
 
 Due to the size of the National Register of Historic Places, the excel spreadsheet download and database creation are in a seperate file. I encourage anyone using this to run the script every week or so to ensure accurate listing data.
 
+# Run the scripts
+
+'''
+python3 create_nrhp_db.py #run weekly to update new listings
+python3 query_sql.py
+'''
+
 # Future Ideas
 This project is still a work in progress and I hope to implement these features in the future:
 
