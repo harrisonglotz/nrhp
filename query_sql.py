@@ -7,7 +7,7 @@ import sqlite3
 conn = sqlite3.connect('nrhp.sqlite')
 cur = conn.cursor()
 
-#get user's state
+#get user's state from command line
 user_input_state = input('enter state: ')
 user_input_state = user_input_state.upper()
 user_input_state_pretty = user_input_state.lower()
