@@ -5,10 +5,10 @@ Due to the size of the National Register of Historic Places, the excel spreadshe
 
 # Run the scripts
 
-'''
+```
 python3 create_nrhp_db.py #run weekly to update new listings
 python3 query_sql.py
-'''
+```
 
 # Future Ideas
 This project is still a work in progress and I hope to implement these features in the future:
