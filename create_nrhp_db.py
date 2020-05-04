@@ -30,6 +30,7 @@ time.sleep(1)
 #rename colums rows so there are no spaces
 cur = conn.cursor()
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Property Name' TO 'Property_Name'") 
+cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'City ' TO 'City'") 
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Listed Date' TO 'Listed_Date'")
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Ref#' TO 'Ref_Num'")
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'NHL Designated Date' TO 'NHL_Designated_Date'")
