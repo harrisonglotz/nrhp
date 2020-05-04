@@ -1,5 +1,5 @@
 # NRHP
-This project's goal is to create a database from current National Register of Historic Places listings and provide the current listings in a given locality.
+These scripts create a database from current National Register of Historic Places listings and provide the current listings in a given locality.
 
 # Future Ideas
 This project is still a work in progress and I hope to implement these features in the future:
