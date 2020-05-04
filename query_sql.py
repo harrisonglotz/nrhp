@@ -6,15 +6,18 @@ import sqlite3
 conn = sqlite3.connect('nrhp.sqlite')
 cur = conn.cursor()
 
+#get user's state
 user_input_state = input('enter state: ')
 user_input_state = user_input_state.upper()
 user_input_state_pretty = user_input_state.lower()
 user_input_state_pretty = user_input_state.capitalize()
 
+#get user's county, if using
 user_input_county = input('enter county (leave blank if city): ')
 user_input_county = user_input_county.lower()
 user_input_county = user_input_county.capitalize()
 
+#get user's city, if using
 user_input_city = input('enter city (leave blank if county): ')
 user_input_city = user_input_city.lower()
 user_input_city = user_input_city.capitalize()
