@@ -27,7 +27,6 @@ There are 7 NRHP Listings in Greene County, Virginia:
 5: Octonia Stone
 6: Powell--McMullan House
 7: Stanardsville Historic District
-Harrisons-MBP:nrhp harrisonglotz$ 
 ```
 
 # Future Ideas
