@@ -2,15 +2,19 @@
 import pandas as pd
 import sqlite3
 import requests
+import time
 
+print('downloading spreadsheet...')
+time.sleep(1)
 #get latest verison of the spreadsheet and download
 url = 'https://www.nps.gov/subjects/nationalregister/upload/national_register_listed_20200108.xlsx'
 r = requests.get(url, allow_redirects=True)
 open('nrhp.xlsx', 'wb').write(r.content)
-
+print("spreadsheet download complete.\n\n")
 #name database
 dbname = 'nrhp'
 
+print("creating sqlite database...")
 #connect to database
 conn = sqlite3.connect(dbname + '.sqlite')
 
@@ -19,7 +23,10 @@ df = pd.read_excel('nrhp.xlsx')
 
 #convert dataframe into a sqlite file
 df.to_sql(name='AdvSearchResults', con=conn)
+print("\ndatabase creation complete...\n\n")
 
+print('formatting database columns...')
+time.sleep(1)
 #rename colums rows so there are no spaces
 cur = conn.cursor()
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Property Name' TO 'Property_Name'") 
@@ -39,5 +46,5 @@ cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Other Names' TO 'Othe
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Park Name' TO 'Park_Name'")
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Significant Persons' TO 'Significant_Persons'")
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'External Link' TO 'External_Link'")
-
+print("\ntask complete.")
 
