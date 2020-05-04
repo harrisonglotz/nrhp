@@ -1,8 +1,12 @@
 # NRHP
-This project's goal is to be able to make the National Register of Historic Places more searchable for my personal python projects.
+This project's goal is to create a database from current National Register of Historic Places listings and provide the current listings in a given locality.
 
-# Motivation
-While historic preservation is a large and dedicated community, it lacks readily available information about historically significant properties. The hope is to be able to create a full scale application to query against this data. 
+# Future Ideas
+This project is still a work in progress and I hope to implement these features in the future:
+
+-Ability to automatically fetch nomination pdfs for a specific listing, or for all listings in a given locality
+-Map listings of a given locality for user interaction, directions, etc.
+-Create a barebones wikipedia page for a given listing
 
 # Contact
 Shoot me an email at harrisonglotz28@gmail.com
