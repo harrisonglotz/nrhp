@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
+#query_sql.py - this currently just searches and returns listings in given locality, 
+#but can be changed quickly to return other data from the database.
 import pandas
 import sqlite3
 
