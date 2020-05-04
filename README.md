@@ -12,6 +12,23 @@ In the same repository of the newly created .sqlite database, run the query scri
 ```
 python3 query_sql.py
 ```
+In it's current form, the query script will return all listings in a given locality.
+
+```
+enter state: virginia
+enter county (leave blank if city): greene
+enter city (leave blank if county): 
+
+There are 7 NRHP Listings in Greene County, Virginia: 
+1: Locust Grove
+2: Gibson Memorial Chapel and Martha Bagby Battle House at Blue Ridge School
+3: Beadles House
+4: Greene County Courthouse
+5: Octonia Stone
+6: Powell--McMullan House
+7: Stanardsville Historic District
+Harrisons-MBP:nrhp harrisonglotz$ 
+```
 
 # Future Ideas
 This project is still a work in progress and I hope to implement these features in the future:
