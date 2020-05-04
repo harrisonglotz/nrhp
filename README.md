@@ -6,7 +6,7 @@ Due to the size of the National Register of Historic Places, the excel spreadshe
 # Run the scripts
 
 ```
-python3 create_nrhp_db.py #run weekly to update new listings
+python3 create_nrhp_db.py # run weekly to update new listings
 ```
 In the same repository of the newly created .sqlite database, run the query script:
 ```
