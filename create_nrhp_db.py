@@ -5,7 +5,7 @@ import sqlite3
 #name database
 dbname = 'nrhp'
 
-#idk what this does tbh
+#connect to database
 conn = sqlite3.connect(dbname + '.sqlite')
 
 #read excel file with pandas
