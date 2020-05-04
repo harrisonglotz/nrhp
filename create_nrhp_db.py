@@ -10,7 +10,7 @@ time.sleep(1)
 url = 'https://www.nps.gov/subjects/nationalregister/upload/national_register_listed_20200108.xlsx'
 r = requests.get(url, allow_redirects=True)
 open('nrhp.xlsx', 'wb').write(r.content)
-print("spreadsheet download complete.\n\n")
+print("spreadsheet download complete.")
 #name database
 dbname = 'nrhp'
 
@@ -23,7 +23,7 @@ df = pd.read_excel('nrhp.xlsx')
 
 #convert dataframe into a sqlite file
 df.to_sql(name='AdvSearchResults', con=conn)
-print("\ndatabase creation complete...\n\n")
+print("\ndatabase creation complete...")
 
 print('formatting database columns...')
 time.sleep(1)
@@ -47,5 +47,6 @@ cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Other Names' TO 'Othe
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Park Name' TO 'Park_Name'")
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Significant Persons' TO 'Significant_Persons'")
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'External Link' TO 'External_Link'")
-print("\ntask complete.")
+print("task complete.")
 
+conn.close()
