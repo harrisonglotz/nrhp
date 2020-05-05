@@ -3,31 +3,50 @@ import pandas as pd
 import sqlite3
 import requests
 import time
+from bs4 import BeautifulSoup
 
+#get current spreadsheet file name
+scrape_url = 'https://www.nps.gov/subjects/nationalregister/database-research.htm'
+response = requests.get(scrape_url)
+soup = BeautifulSoup(response.text, "html.parser")
+
+pretty = soup.prettify()
+
+nps_excel_file_name = pretty[20373:20381]
+nps_excel_file_name = str(nps_excel_file_name)
+
+
+#get latest verison of the spreadsheet and download
 print('downloading spreadsheet...')
 time.sleep(1)
-#get latest verison of the spreadsheet and download
-url = 'https://www.nps.gov/subjects/nationalregister/upload/national_register_listed_20200108.xlsx'
+
+
+url = f'https://www.nps.gov/subjects/nationalregister/upload/national_register_listed_{nps_excel_file_name}.xlsx'
 r = requests.get(url, allow_redirects=True)
 open('nrhp.xlsx', 'wb').write(r.content)
 print("spreadsheet download complete.")
+
+
 #name database
 dbname = 'nrhp'
+
 
 print("creating sqlite database...")
 #connect to database
 conn = sqlite3.connect(dbname + '.sqlite')
 
+
 #read excel file with pandas
 df = pd.read_excel('nrhp.xlsx')
 
+
 #convert dataframe into a sqlite file
 df.to_sql(name='AdvSearchResults', con=conn)
-print("\ndatabase creation complete...")
+print("database creation complete...")
 
+#rename colums rows so there are no spaces
 print('formatting database columns...')
 time.sleep(1)
-#rename colums rows so there are no spaces
 cur = conn.cursor()
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'Property Name' TO 'Property_Name'") 
 cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'City ' TO 'City'") 
