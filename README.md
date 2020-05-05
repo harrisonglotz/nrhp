@@ -1,5 +1,5 @@
 # NRHP
-These scripts create a database from current National Register of Historic Places listings and provide the current listings in a given locality.
+These scripts a.) create a database from current National Register of Historic Places listings and b.) provide the current listings in a given locality.
 
 Due to the size of the National Register of Historic Places, the excel spreadsheet download/database creation are in a seperate file. I encourage anyone using this to run the script every week or so to ensure accurate listing data.
 
@@ -9,7 +9,7 @@ Create the database by running create_nrhp_db.py:
 ```
 python3 create_nrhp_db.py  #run weekly to update new listings
 ```
-In the same repository of the newly created .sqlite database, run the query script:
+In the same directory of the newly created .sqlite database, run the query script:
 ```
 python3 query_sql.py
 ```
