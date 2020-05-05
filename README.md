@@ -1,7 +1,7 @@
 # NRHP
-These scripts a.) create a sqlite database of current National Register of Historic Places listings and b.) provide the current listings in a given locality.
+These scripts a.) create a sqlite database of current National Register of Historic Places listings and b.) provide the current listings in a given locality and provide information based on user input. 
 
-Due to the size of the National Register of Historic Places, the excel spreadsheet download/database creation are in a seperate file. I encourage anyone using this to run the script every week or so to ensure accurate listing data.
+Due to the size of the National Register of Historic Places, the excel database creation is in a seperate file. I encourage anyone using this to run the script every week or so to ensure accurate listing data.
 
 # Run the scripts
 
@@ -11,14 +11,14 @@ python3 create_nrhp_db.py  #run weekly to update new listings
 ```
 In the same directory of the newly created .sqlite database, run the query script:
 ```
-python3 query_sql.py
+python3 search_nrhp.py
 ```
-In it's current form, the query script will return all listings in a given locality.
+In it's current form, the query script will return all listings in a given locality and give the user an option to access the nomination form through the national archives. The program will eventually have support for all of the listing attributes.
 
 ```
-enter state: virginia
-enter county (leave blank if city): greene
-enter city (leave blank if county): 
+Enter state: virginia
+Enter county (leave blank if city): greene
+Enter city (leave blank if county): 
 
 There are 7 NRHP Listings in Greene County, Virginia: 
 1: Locust Grove
@@ -28,6 +28,10 @@ There are 7 NRHP Listings in Greene County, Virginia:
 5: Octonia Stone
 6: Powell--McMullan House
 7: Stanardsville Historic District
+
+Enter the number of listing for more information: 3
+The nomination form for this listing is located at: 
+https://catalog.archives.gov/id/41681015
 ```
 
 # Future Ideas
