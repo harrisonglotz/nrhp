@@ -25,33 +25,37 @@ user_input_city = user_input_city.capitalize()
 
 if len(user_input_city) == 0:
 	#get # of hits with the inputted critera
-	cur.execute(f"SELECT Property_Name FROM AdvSearchResults WHERE State='{user_input_state}' AND County='{user_input_county}'")
+	cur.execute(f"SELECT 'index' FROM AdvSearchResults WHERE State='{user_input_state}' AND County='{user_input_county}'")
 	counter = 0
 	for row in cur:
 		counter = counter + 1
 		
-	#return data from query
-	cur.execute(f"SELECT Property_Name FROM AdvSearchResults WHERE State='{user_input_state}' AND County='{user_input_county}'")
+	#return data from query and place external_link in list
+	cur.execute(f"SELECT Property_Name, External_Link FROM AdvSearchResults WHERE State='{user_input_state}' AND County='{user_input_county}'")
 	i = 1
 	print(f'\nThere are {counter} NRHP Listings in {user_input_county} County, {user_input_state_pretty}: ')
 	counter = 0
+	link_list = ["Placeholder"]
 	for row in cur:
 		print(f'{i}: ' + row[0])
+		link_list.append(row[1])
 		i = i + 1
+
 else:
 		#get # of hits with the inputted critera
-	cur.execute(f"SELECT Property_Name FROM AdvSearchResults WHERE State='{user_input_state}' AND City='{user_input_city}'")
+	cur.execute(f"SELECT 'index' FROM AdvSearchResults WHERE State='{user_input_state}' AND City='{user_input_city}'")
 	counter = 0
 	for row in cur:
 		counter = counter + 1
 
-
-	#return data from query
-	cur.execute(f"SELECT Property_Name FROM AdvSearchResults WHERE State='{user_input_state}' AND City='{user_input_city}'")
+	#return data from query and place external_link in list
+	cur.execute(f"SELECT Property_Name, External_Link FROM AdvSearchResults WHERE State='{user_input_state}' AND City='{user_input_city}'")
 	i = 1
 	print(f'\nThere are {counter} NRHP Listings in {user_input_city}, {user_input_state_pretty}: ')
+	counter = 0
+	link_list = ["Placeholder"]
 	for row in cur:
 		print(f'{i}: ' + row[0])
-		i = i + 1
+		link_list.append(row[1])
 
 cur.close()

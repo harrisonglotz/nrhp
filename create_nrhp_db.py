@@ -31,7 +31,7 @@ print("spreadsheet download complete.")
 dbname = 'nrhp'
 
 
-print("creating sqlite database...")
+print("creating sqlite database...\n\n ******IGNORE******")
 #connect to database
 conn = sqlite3.connect(dbname + '.sqlite')
 
@@ -42,7 +42,7 @@ df = pd.read_excel('nrhp.xlsx')
 
 #convert dataframe into a sqlite file
 df.to_sql(name='AdvSearchResults', con=conn)
-print("database creation complete...")
+print(" ******************\n\ndatabase creation complete...")
 
 #rename colums rows so there are no spaces
 print('formatting database columns...')
