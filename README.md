@@ -1,5 +1,5 @@
 # NRHP
-These scripts a.) create a database from current National Register of Historic Places listings and b.) provide the current listings in a given locality.
+These scripts a.) create a sqlite database of current National Register of Historic Places listings and b.) provide the current listings in a given locality.
 
 Due to the size of the National Register of Historic Places, the excel spreadsheet download/database creation are in a seperate file. I encourage anyone using this to run the script every week or so to ensure accurate listing data.
 
