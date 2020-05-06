@@ -33,8 +33,10 @@ if len(user_input_city) == 0:
 		counter = counter + 1
 	print(f'\nThere are {counter} NRHP Listings in {user_input_county} County, {user_input_state_pretty}: ')
 
-	#query relevant data
-	cur.execute(f"SELECT Property_Name, External_Link, Street_And_Number FROM AdvSearchResults WHERE State='{user_input_state}' AND County='{user_input_county}'")
+	#query relevant data and sort Property_Name 
+	cur.execute(f'''SELECT Property_Name, External_Link, Street_And_Number FROM AdvSearchResults 
+				WHERE State='{user_input_state}' AND County='{user_input_county}'
+				ORDER BY Property_Name''')
 	i = 1
 	counter = 0
 	name_list = ["Place holder"]
@@ -50,29 +52,34 @@ if len(user_input_city) == 0:
 		i = i + 1
 else:
 	#get the amount of listings that match the search/query criteria 
-	cur.execute(f"SELECT 'index' FROM AdvSearchResults WHERE State='{user_input_state}' AND City='{user_input_city}'")
+	cur.execute(f'''SELECT 'index' FROM AdvSearchResults WHERE State='{user_input_state}' 
+				AND City='{user_input_city}' OR City='{user_input_city} (Independent City)' ''')
 	counter = 0
 	for row in cur:
 		counter = counter + 1
 	print(f'\nThere are {counter} NRHP Listings in {user_input_city}, {user_input_state_pretty}: ')
 
-	#query relevant data
-	cur.execute(f"SELECT Property_Name, External_Link, Street_And_Number FROM AdvSearchResults WHERE State='{user_input_state}' AND City='{user_input_city}' OR City='{user_input_city} (Independent City)'")
+	#query relevant data and sort by Property_Name
+	cur.execute(f'''SELECT Property_Name, External_Link, Street_And_Number FROM AdvSearchResults 
+				WHERE State='{user_input_state}' AND City='{user_input_city}' OR City='{user_input_city} (Independent City)' 
+				ORDER BY Property_Name ASC''')
 	i = 1
 	counter = 0
 	name_list = ["Placeholder"]
 	link_list = ["Placeholder"]
 	address_list =["Placeholder"]
-	#place external link, and address into lists for later use
+	#place name, external link, and address into lists for later use
 	for row in cur:
-		print(f'{i}: ' + row[0])
 		name_list.append(row[0])
 		link_list.append(row[1])
 		address_list.append(row[2])
 		i = i + 1
+	i = 1
+	while i < len(name_list):
+		print(f"{i}: {name_list[i]}")
+		i = i + 1
 
 cur.close()
-
 
 #prompt user to select a listing and turn into int
 listing_selection = input("\nEnter listing # for more information: ")

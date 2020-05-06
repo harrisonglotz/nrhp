@@ -13,7 +13,7 @@ In the same directory of the newly created .sqlite database, run the search scri
 ```
 $ python3 search_nrhp.py
 ```
-In it's current form, the query script will return all listings in a given locality and give the user an option to access the address/location and external link for further research.
+In it's current form, the query script will return all listings in a given locality (sorted alphabetically) and give the user an option to access the address/location and external link for further research.
 
 ```
 $ python3 search_nrhp.py
@@ -22,15 +22,15 @@ Enter county (leave blank if city): greene
 Enter city (leave blank if county): 
 
 There are 7 NRHP Listings in Greene County, Virginia: 
-1: Locust Grove
+1: Beadles House
 2: Gibson Memorial Chapel and Martha Bagby Battle House at Blue Ridge School
-3: Beadles House
-4: Greene County Courthouse
+3: Greene County Courthouse
+4: Locust Grove
 5: Octonia Stone
 6: Powell--McMullan House
 7: Stanardsville Historic District
 
-Enter listing # for more information: 3
+Enter listing # for more information: 1
 
 Information for Beadles House:
 Address/Location: 515 Greene Acres Rd.
@@ -43,8 +43,6 @@ This project is still a work in progress and I hope to implement these features 
 -Ability to automatically fetch nomination pdfs for a specific listing, or for all listings in a given locality
 
 -Map listings of a given locality for user interaction, directions, etc.
-
--Create a barebones wikipedia page for a given listing
 
 -National Historic Landmark support
 
