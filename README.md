@@ -14,7 +14,6 @@ In the same directory of the newly created .sqlite database, run the search scri
 $ python3 search_nrhp.py
 ```
 In it's current form, the query script will return all listings in a given locality (sorted alphabetically) and give the user an option to access the address/location and external link for further research.
-
 ```
 $ python3 search_nrhp.py
 Enter state: virginia
@@ -36,6 +35,17 @@ Information for Beadles House:
 Address/Location: 515 Greene Acres Rd.
 External Link: https://catalog.archives.gov/id/41681015
 ```
+
+Unfortunately, some addresses provided by the NPS are vague, and will only give general descriptions based on state routes. Along with this, even very well known listings are missing external links:
+```
+Information for Tuckahoe:
+Address/Location: SE of Manakin near jct. of Rtes. 650 and 647
+External Link: None
+```
+
+Listings with clear addresses can be mapped via Google Maps (addresses with only 1 street number are currently not supported). Because information data is inconsistant throughout the NPS database, you may get a false positive and Google Maps will not be able to link the listing.   
+
+
 
 # Future Ideas
 This project is still a work in progress and I hope to implement these features in the future:
