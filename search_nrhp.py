@@ -60,7 +60,7 @@ else:
 	print(f'\nThere are {counter} NRHP Listings in {user_input_city}, {user_input_state_pretty}: ')
 
 	#query relevant data and sort by Property_Name
-	cur.execute(f'''SELECT Property_Name, External_Link, Street_And_Number FROM AdvSearchResults 
+	cur.execute(f'''SELECT Property_Name, External_Link, Street_And_Number FROM AdvSearchResults
 				WHERE State='{user_input_state}' AND City='{user_input_city}' OR City='{user_input_city} (Independent City)' 
 				ORDER BY Property_Name ASC''')
 	i = 1
@@ -93,7 +93,6 @@ selected_external_link = link_list[listing_selection]
 print(f"\nInformation for {selected_name}:") 
 print(f"Address/Location: {selected_address}")
 print(f"External Link: {selected_external_link}\n")
-
 
 
 
