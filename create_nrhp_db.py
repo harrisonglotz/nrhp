@@ -31,7 +31,7 @@ print("spreadsheet download complete.")
 dbname = 'nrhp'
 
 
-print("creating sqlite database...\n\n ******IGNORE******")
+print("creating sqlite database (this may take several seconds)...\n\n ******IGNORE******")
 #connect to database
 conn = sqlite3.connect(dbname + '.sqlite')
 
