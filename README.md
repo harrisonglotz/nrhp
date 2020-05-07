@@ -7,7 +7,7 @@ Due to the size of the National Register of Historic Places, the database creati
 
 Create the database by running create_nrhp_db.py:
 ```
-$ python3 create_nrhp_db.py  #run weekly to update new listings
+$ python3 create_nrhp_db.py
 ```
 In the same directory of the newly created .sqlite database, run the search script:
 ```
@@ -36,14 +36,18 @@ Address/Location: 515 Greene Acres Rd.
 External Link: https://catalog.archives.gov/id/41681015
 ```
 
-Unfortunately, some addresses provided by the NPS are vague, and will only give general descriptions based on state routes. Along with this, even very well known listings are missing external links:
+Unfortunately, some addresses provided by the NPS are vague, and only give general descriptions. Along with this, very well known listings are sometimes missing external links. This example has both:
 ```
 Information for Tuckahoe:
 Address/Location: SE of Manakin near jct. of Rtes. 650 and 647
 External Link: None
 ```
 
-Listings with clear addresses can be mapped via Google Maps (addresses with only 1 street number are currently not supported). Because information data is inconsistant throughout the NPS database, you may get a false positive and Google Maps will not be able to link the listing.   
+Listings with clear addresses can be mapped via Google Maps (addresses with only 1 street number are currently not supported). Because information data is inconsistant throughout the NPS database, you may get a false positive and Google Maps will not be able to link the listing.
+
+```
+Map it on Google Maps? (y/n): y 	# maps listing in preferred web browser
+``` 
 
 
 
@@ -51,8 +55,6 @@ Listings with clear addresses can be mapped via Google Maps (addresses with only
 This project is still a work in progress and I hope to implement these features in the future:
 
 -Ability to automatically fetch nomination pdfs for a specific listing, or for all listings in a given locality
-
--Map listings of a given locality for user interaction, directions, etc.
 
 -National Historic Landmark support
 
