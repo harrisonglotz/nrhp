@@ -13,7 +13,7 @@ In the same directory of the newly created .sqlite database, run the search scri
 ```
 $ python3 search_nrhp.py
 ```
-In it's current form, the query script will return all listings in a given locality (sorted alphabetically) and give the user an option to access the address/location and external link for further research.
+In it's current form, the search_nrhp script will return all listings in a given locality (sorted alphabetically) and give the user an option to access the address/location and external link for further research.
 ```
 $ python3 search_nrhp.py
 Enter state: virginia
@@ -36,7 +36,7 @@ Address/Location: 515 Greene Acres Rd.
 External Link: https://catalog.archives.gov/id/41681015
 ```
 
-Unfortunately, some addresses provided by the NPS are vague, and only give general descriptions. Along with this, listings are sometimes missing external links. This property has both:
+Unfortunately, some addresses provided by the NPS are vague and only give general descriptions. Along with this, listings are sometimes missing external links. This property has both:
 ```
 Information for Tuckahoe:
 Address/Location: SE of Manakin near jct. of Rtes. 650 and 647
