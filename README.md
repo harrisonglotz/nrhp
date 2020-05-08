@@ -36,7 +36,7 @@ Address/Location: 515 Greene Acres Rd.
 External Link: https://catalog.archives.gov/id/41681015
 ```
 
-Unfortunately, some addresses provided by the NPS are vague, and only give general descriptions. Along with this, very well known listings are sometimes missing external links. This example has both:
+Unfortunately, some addresses provided by the NPS are vague, and only give general descriptions. Along with this, listings are sometimes missing external links. This property has both:
 ```
 Information for Tuckahoe:
 Address/Location: SE of Manakin near jct. of Rtes. 650 and 647
