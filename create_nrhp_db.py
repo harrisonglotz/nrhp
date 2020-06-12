@@ -4,7 +4,9 @@ import sqlite3
 import requests
 import time
 from bs4 import BeautifulSoup
+import xlrd
 
+'''
 #get current spreadsheet file name
 scrape_url = 'https://www.nps.gov/subjects/nationalregister/database-research.htm'
 response = requests.get(scrape_url)
@@ -15,13 +17,15 @@ pretty = soup.prettify()
 nps_excel_file_name = pretty[20373:20381]
 nps_excel_file_name = str(nps_excel_file_name)
 
+print(nps_excel_file_name)
+'''
+
 
 #get latest verison of the spreadsheet and download
 print('downloading spreadsheet...')
 time.sleep(1)
 
-
-url = f'https://www.nps.gov/subjects/nationalregister/upload/national_register_listed_{nps_excel_file_name}.xlsx'
+url = 'https://www.nps.gov/subjects/nationalregister/upload/national_register_listed_20200108.xlsx'
 r = requests.get(url, allow_redirects=True)
 open('nrhp.xlsx', 'wb').write(r.content)
 print("spreadsheet download complete.")
@@ -69,3 +73,4 @@ cur.execute("ALTER TABLE 'AdvSearchResults' RENAME COLUMN 'External Link' TO 'Ex
 print("task complete.")
 
 conn.close()
+
